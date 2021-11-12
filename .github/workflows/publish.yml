@@ -21,4 +21,5 @@ jobs:
     - name: build and publish
       run: |
         docker build . --tag ghcr.io/${{ github.repository }}/pyt:latest
+        docker run ghcr.io/${{ github.repository }}/pyt:latest
         ghcr.io/${{ github.repository }}/pyt:latest
