@@ -2,7 +2,7 @@ name: publish
 
 on:
   push:
-    branches: [main, dev]
+    branches: [main, dev, cuda11.3]
 
 jobs:
   publish:
@@ -30,6 +30,6 @@ jobs:
 
     - name: build and publish
       run: |
-        docker build . --squash --tag ghcr.io/${{ github.repository }}/pyt:latest
-        docker run ghcr.io/${{ github.repository }}/pyt:latest
-        docker push ghcr.io/${{ github.repository }}/pyt:latest
+        docker build . --squash --tag ghcr.io/${{ github.repository }}/pyt:cuda11.3
+        docker run ghcr.io/${{ github.repository }}/pyt:cuda11.3
+        docker push ghcr.io/${{ github.repository }}/pyt:cuda11.3
